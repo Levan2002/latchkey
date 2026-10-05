@@ -429,7 +429,7 @@ def guide(slug, title, desc, steps_ld, body, short):
     r = "../"
     page = head(title + " | Latchkey", desc, path, r, og_type="article", jsonld=ld) + header(r, "guides/")
     page += f'<main id="main"><article class="wrap page">\n{crumbs}\n<h1>{esc(title)}</h1>\n<p class="meta">Updated 5 October 2026 &middot; by Levani Topchishvili, developer of Latchkey</p>\n{body}\n'
-    page += f"""<div class="panel"><h2>Get Latchkey</h2><p>Latchkey is a free two-factor authenticator for iPhone: no account, no ads, no analytics, codes stay on your device. Setup guides for 56 services, imports from other authenticators, and an encrypted backup.</p><p><a class="cta" href="{STORE}">Download on the App Store</a></p></div>
+    page += f"""<div class="panel"><h2>Get Latchkey</h2><p>Latchkey keeps your two-factor codes on your iPhone and shows the exact setting to open for 56 popular services. It also imports codes from other authenticators and saves encrypted backup files.</p><p><a class="cta" href="{STORE}">Download on the App Store</a></p></div>
 <p><a href="./">&larr; More guides</a> &middot; <a href="../help.html">Help and FAQ</a></p>
 </article></main>
 """ + footer(r)
