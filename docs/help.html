@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Help and FAQ: Latchkey Authenticator for iPhone</title>
+<meta name="description" content="How to add accounts, move to a new iPhone, back up and restore, import from Google Authenticator, 2FAS, Aegis and Raivo, set up AutoFill and widgets, and manage Latchkey Pro.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0E3B2E">
+<meta name="apple-itunes-app" content="app-id=6819347011">
+<link rel="canonical" href="https://levan2002.github.io/latchkey/help.html">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Help and FAQ: Latchkey Authenticator for iPhone">
+<meta property="og:description" content="How to add accounts, move to a new iPhone, back up and restore, import from Google Authenticator, 2FAS, Aegis and Raivo, set up AutoFill and widgets, and manage Latchkey Pro.">
+<meta property="og:url" content="https://levan2002.github.io/latchkey/help.html">
+<meta property="og:site_name" content="Latchkey">
+<meta property="og:image" content="https://levan2002.github.io/latchkey/img/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How do I add an account?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "On the Codes tab, tap + and choose how to add it: Scan QR Code: point the camera at the QR code on the website's two-factor setup page. Choose a Screenshot: setting up on this same iPhone? Take a screenshot of the QR code, then pick it from your photos. Paste Setup Link or Key: if you copied the key or an otpauth:// link. Enter Setup Key: type the key the website shows under \"Can't scan?\". Follow a Setup Guide: the Guides tab has 56 services with the exact menu path. After you add it, the website asks you to type the six-digit code back to finish turning on two-factor. Do not skip that step."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "I can't scan the QR code. What is the setup key?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The setup key (also called a secret or manual entry key) is the same information as the QR code, written as letters and numbers. Websites show it under a link such as \"Can't scan?\" or \"Enter a code manually\". Choose + › Enter Setup Key, type the key, and give the account a name. Keys use only the letters A to Z and the digits 2 to 7, so a 0, 1 or 8 means a typo. If you are on your iPhone, you can't point the camera at its own screen. Use Choose a Screenshot, or copy the key and use Paste Setup Link or Key. Leave the Advanced settings (digits, algorithm, period) alone unless the website lists different values. Most use 6 digits, SHA-1 and 30 seconds."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "The website says my code is invalid. What is wrong?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Codes are calculated from the current time, so if your iPhone's clock is off, every code will be rejected. Open Settings › General › Date & Time and turn on Set Automatically. Then try the next code that appears. Other common causes: you are using the code for a different account; the code expired while you were typing it (wait for the next one); or, for counter-based accounts, you need to tap Next code to move on."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I move to a new phone?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "There are three ways, and you can combine them. Keep the old iPhone working until you have checked a code from every account on the new one. Latchkey Pro sync: turn on Settings › iCloud Keychain sync on the old phone, install Latchkey on the new one and sign in with the same Apple Account. Your accounts appear there. Transfer QR codes (free): on the old phone open Settings › Move to another phone › Show Transfer Codes. On the new phone choose + › Import › Scan a Transfer QR Code and scan each code, swiping to the next one on the old phone. Backup file (free): make a backup (next question), move the file with AirDrop, Files or iCloud Drive, then import it on the new phone. The transfer codes contain your secrets, so show them only in private and close the screen when done. Our full guide goes through each method."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I back up and restore?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Back up: Settings › Back up to a file. Choose a password of at least 8 characters, save the .latchkey file to Files, iCloud Drive or a USB drive. The file is encrypted with AES-256-GCM, with a key derived from your password. Write the password down: nobody, including us, can recover it. Restore: Settings › Import from another app › Choose a File, pick the .latchkey file and enter its password. Latchkey shows what it found and lets you choose which accounts to add. Nothing is uploaded; the file is read on your iPhone. A backup file is a snapshot. Make a fresh one after adding accounts."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "I lost my phone. What now?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Latchkey has no server and no account, so we cannot see or restore your codes. What helps, in order: If you used iCloud Keychain sync (Pro) or kept a backup file, install Latchkey on the new phone and restore. Your codes are back. Otherwise, sign in to each service using the backup (recovery) codes it gave you when you turned on two-factor. Latchkey can store these per account (Account › Details & Backup Codes), but they will not be on a lost phone with no sync or backup, so also keep a copy somewhere else, such as a printout. If you have neither, use the service's account recovery. Each one differs and may take days. Once back in, turn two-factor on again with a new Latchkey setup, and generate fresh backup codes. Consider using Find My to lock or erase the lost device."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which apps can I import from?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Latchkey reads Google Authenticator transfer QR codes, 2FAS backups (plain or encrypted), Aegis unencrypted JSON, Raivo JSON, other Latchkey backups, and any text file containing otpauth:// links (Ente Auth, Bitwarden and many others). Start at Settings › Import from another app (or + › Import). Latchkey shows a review screen and lets you choose which accounts to add, and marks ones that are already in Latchkey. The menus below are as best we know them; apps move things between versions. If a menu has changed, look for \"export\" or \"transfer\" in that app's settings. Keep the old app until you have checked a code from each account in Latchkey. Export files hold your secrets in readable form, so delete them when you are finished."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I turn on one-time-code AutoFill? (Pro)",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "In iOS open Settings › General › AutoFill & Passwords › Verification Codes and choose Latchkey. (In Latchkey, Settings › AutoFill codes has a button that opens it.) Make sure each account has its website set; Latchkey knows many already. For others, open the account and add its AutoFill website, like github.com. Sign in as usual. When the code field appears, tap the Latchkey suggestion above the keyboard. AutoFill needs Latchkey Pro. If a code does not show up, check the website setting on the account, and that Latchkey is selected under Verification Codes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I cancel, restore or manage Latchkey Pro?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cancel: on your iPhone open Settings › your name › Subscriptions › Latchkey Pro and tap Cancel (or Cancel Free Trial). Do it at least a day before the renewal date. You keep Pro until the end of the period you paid for. Deleting the app does not cancel a subscription. Restore on a new phone: sign in with the same Apple Account, then in Latchkey open Settings › Restore Purchases. This restores the monthly, yearly or lifetime Pro purchase. Refunds: Apple handles billing and refunds. Visit reportaproblem.apple.com. Prices: $1.99 a month or $12.99 a year (1-week free trial), or $29.99 lifetime, in US dollars; other countries see local prices. Subscriptions renew automatically unless cancelled and are governed by Apple's standard Terms of Use."
+   }
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Latchkey",
+   "item": "https://levan2002.github.io/latchkey/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Help",
+   "item": "https://levan2002.github.io/latchkey/help.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+<a class="brand" href=""><img src="img/icon-96.png" width="36" height="36" alt="">Latchkey</a>
+<nav aria-label="Main"><a href="help.html" aria-current="page">Help</a><a href="guides/">Guides</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+</div></header>
+<main id="main"><div class="wrap page">
+<h1>Help and FAQ</h1>
+<p>Answers to the most common questions about Latchkey: Authenticator App. Can't find yours? See <a href="#contact">how to contact us</a>.</p>
+<nav class="toc" aria-label="On this page"><b>On this page</b><ul><li><a href="#g0">Adding accounts</a></li><li><a href="#g1">Backup and a new phone</a></li><li><a href="#g2">Importing from another app</a></li><li><a href="#g3">Features</a></li><li><a href="#g4">Subscriptions</a></li><li><a href="#g5">Other questions</a></li></ul></nav>
+<h2 id="g0">Adding accounts</h2>
+<details id="add"><summary>How do I add an account?</summary><div class="ans"><p>On the Codes tab, tap <span class="path">+</span> and choose how to add it:</p>
+<ul><li><strong>Scan QR Code:</strong> point the camera at the QR code on the website's two-factor setup page.</li>
+<li><strong>Choose a Screenshot:</strong> setting up on this same iPhone? Take a screenshot of the QR code, then pick it from your photos.</li>
+<li><strong>Paste Setup Link or Key:</strong> if you copied the key or an <code>otpauth://</code> link.</li>
+<li><strong>Enter Setup Key:</strong> type the key the website shows under "Can't scan?".</li>
+<li><strong>Follow a Setup Guide:</strong> the Guides tab has 56 services with the exact menu path.</li></ul>
+<p>After you add it, the website asks you to type the six-digit code back to finish turning on two-factor. Do not skip that step.</p></div></details>
+<details id="noscan"><summary>I can't scan the QR code. What is the setup key?</summary><div class="ans"><p>The setup key (also called a secret or manual entry key) is the same information as the QR code, written as letters and numbers. Websites show it under a link such as "Can't scan?" or "Enter a code manually". Choose <span class="path">+ &rsaquo; Enter Setup Key</span>, type the key, and give the account a name. Keys use only the letters A to Z and the digits 2 to 7, so a 0, 1 or 8 means a typo.</p>
+<p>If you are on your iPhone, you can't point the camera at its own screen. Use <strong>Choose a Screenshot</strong>, or copy the key and use <strong>Paste Setup Link or Key</strong>.</p>
+<p>Leave the Advanced settings (digits, algorithm, period) alone unless the website lists different values. Most use 6 digits, SHA-1 and 30 seconds.</p></div></details>
+<details id="invalid"><summary>The website says my code is invalid. What is wrong?</summary><div class="ans"><p>Codes are calculated from the current time, so if your iPhone's clock is off, every code will be rejected. Open <span class="path">Settings &rsaquo; General &rsaquo; Date &amp; Time</span> and turn on <strong>Set Automatically</strong>. Then try the next code that appears.</p>
+<p>Other common causes: you are using the code for a different account; the code expired while you were typing it (wait for the next one); or, for counter-based accounts, you need to tap <strong>Next code</strong> to move on.</p></div></details>
+<h2 id="g1">Backup and a new phone</h2>
+<details id="newphone"><summary>How do I move to a new phone?</summary><div class="ans"><p>There are three ways, and you can combine them. Keep the old iPhone working until you have checked a code from every account on the new one.</p>
+<ol><li><strong>Latchkey Pro sync:</strong> turn on <span class="path">Settings &rsaquo; iCloud Keychain sync</span> on the old phone, install Latchkey on the new one and sign in with the same Apple Account. Your accounts appear there.</li>
+<li><strong>Transfer QR codes (free):</strong> on the old phone open <span class="path">Settings &rsaquo; Move to another phone &rsaquo; Show Transfer Codes</span>. On the new phone choose <span class="path">+ &rsaquo; Import &rsaquo; Scan a Transfer QR Code</span> and scan each code, swiping to the next one on the old phone.</li>
+<li><strong>Backup file (free):</strong> make a backup (next question), move the file with AirDrop, Files or iCloud Drive, then import it on the new phone.</li></ol>
+<p>The transfer codes contain your secrets, so show them only in private and close the screen when done. <a href="guides/move-authenticator-codes-to-new-iphone.html">Our full guide</a> goes through each method.</p></div></details>
+<details id="backup"><summary>How do I back up and restore?</summary><div class="ans"><p><strong>Back up:</strong> <span class="path">Settings &rsaquo; Back up to a file</span>. Choose a password of at least 8 characters, save the <code>.latchkey</code> file to Files, iCloud Drive or a USB drive. The file is encrypted with AES-256-GCM, with a key derived from your password. <strong>Write the password down: nobody, including us, can recover it.</strong></p>
+<p><strong>Restore:</strong> <span class="path">Settings &rsaquo; Import from another app &rsaquo; Choose a File</span>, pick the <code>.latchkey</code> file and enter its password. Latchkey shows what it found and lets you choose which accounts to add. Nothing is uploaded; the file is read on your iPhone.</p>
+<p>A backup file is a snapshot. Make a fresh one after adding accounts.</p></div></details>
+<details id="lost"><summary>I lost my phone. What now?</summary><div class="ans"><p>Latchkey has no server and no account, so we cannot see or restore your codes. What helps, in order:</p>
+<ol><li>If you used <strong>iCloud Keychain sync</strong> (Pro) or kept a <strong>backup file</strong>, install Latchkey on the new phone and restore. Your codes are back.</li>
+<li>Otherwise, sign in to each service using the <strong>backup (recovery) codes</strong> it gave you when you turned on two-factor. Latchkey can store these per account (<span class="path">Account &rsaquo; Details &amp; Backup Codes</span>), but they will not be on a lost phone with no sync or backup, so also keep a copy somewhere else, such as a printout.</li>
+<li>If you have neither, use the service's account recovery. Each one differs and may take days.</li></ol>
+<p>Once back in, turn two-factor on again with a new Latchkey setup, and generate fresh backup codes. Consider using <a href="https://support.apple.com/find-my">Find My</a> to lock or erase the lost device.</p></div></details>
+<details id="backupcodes"><summary>What are backup codes and where do I keep them in Latchkey?</summary><div class="ans"><p>When you turn on two-factor, most services give you a list of one-time recovery codes. Each works once, as a stand-in for your authenticator. Open the account in Latchkey, tap <strong>Details &amp; Backup Codes</strong> and add them, or edit the list as you use them. You can also print them. Keep a second copy somewhere that is not this phone.</p></div></details>
+<h2 id="g2">Importing from another app</h2>
+<details id="import-overview"><summary>Which apps can I import from?</summary><div class="ans"><p>Latchkey reads Google Authenticator transfer QR codes, 2FAS backups (plain or encrypted), Aegis unencrypted JSON, Raivo JSON, other Latchkey backups, and any text file containing <code>otpauth://</code> links (Ente Auth, Bitwarden and many others). Start at <span class="path">Settings &rsaquo; Import from another app</span> (or <span class="path">+ &rsaquo; Import</span>). Latchkey shows a review screen and lets you choose which accounts to add, and marks ones that are already in Latchkey.</p>
+<p>The menus below are as best we know them; apps move things between versions. If a menu has changed, look for "export" or "transfer" in that app's settings. <strong>Keep the old app until you have checked a code from each account in Latchkey.</strong> Export files hold your secrets in readable form, so delete them when you are finished.</p></div></details>
+<details id="import-google"><summary>Google Authenticator</summary><div class="ans"><ol><li>In Google Authenticator, tap the <span class="path">&#8943;</span> menu, then <span class="path">Transfer accounts</span> &rsaquo; <span class="path">Export accounts</span>, and select the accounts.</li>
+<li>It shows one or more QR codes. In Latchkey choose <span class="path">+ &rsaquo; Import &rsaquo; Scan a Transfer QR Code</span> and scan each (you need a second device to show them).</li>
+<li>If you have only one phone, a screenshot of the QR code works if your version of Google Authenticator lets you take one: choose <strong>Choose a Photo of the QR Code</strong> in Latchkey, then delete the screenshot.</li></ol>
+<p>Full walkthrough: <a href="guides/import-google-authenticator-codes.html">How to import codes from Google Authenticator</a>.</p></div></details>
+<details id="import-2fas"><summary>2FAS</summary><div class="ans"><ol><li>In 2FAS open <span class="path">Settings &rsaquo; Backup</span> (wording differs by version) and export to a file. You can export encrypted with a password or without.</li>
+<li>Save the file to Files or iCloud Drive.</li>
+<li>In Latchkey choose <span class="path">Import from another app &rsaquo; Choose a File</span>, pick the file and, if it is encrypted, enter the password you set.</li></ol></div></details>
+<details id="import-aegis"><summary>Aegis (Android)</summary><div class="ans"><p>Aegis is an Android app, so this is for moving from an Android phone to an iPhone.</p>
+<ol><li>In Aegis open <span class="path">Settings &rsaquo; Backups</span> (or the export option), and export as <strong>JSON without encryption</strong>. Latchkey reads unencrypted Aegis JSON; encrypted Aegis vaults are not supported, so turn encryption off for the export.</li>
+<li>Get the file to your iPhone (AirDrop is not available from Android; use email to yourself, a cloud drive or a USB transfer to Files).</li>
+<li>In Latchkey: <span class="path">Import from another app &rsaquo; Choose a File</span>. Delete the file afterwards.</li></ol></div></details>
+<details id="import-raivo"><summary>Raivo</summary><div class="ans"><ol><li>In Raivo open <span class="path">Settings &rsaquo; Export</span> and export your OTPs (the export is a ZIP archive containing JSON).</li>
+<li>In Files, tap the ZIP to unpack it, so you have the JSON file.</li>
+<li>In Latchkey: <span class="path">Import from another app &rsaquo; Choose a File</span> and pick the JSON.</li></ol></div></details>
+<details id="import-otpauth"><summary>Ente Auth, Bitwarden and other apps</summary><div class="ans"><p>Latchkey scans any text, CSV or JSON file for <code>otpauth://</code> links, which is the standard way one-time-code secrets are written.</p>
+<ul><li><strong>Ente Auth:</strong> open its Settings, find the Data or Export section, and export as plain text (the unencrypted option). Import the file in Latchkey.</li>
+<li><strong>Bitwarden:</strong> export your vault as an unencrypted <code>.json</code> or <code>.csv</code> (web vault: Tools &rsaquo; Export vault). Logins that have an authenticator key include it as an <code>otpauth://</code> link, which Latchkey finds. Delete the export afterwards: it also contains your passwords.</li>
+<li><strong>Anything else:</strong> if the app can export a file with <code>otpauth://</code> links, it will work. If Latchkey says it found nothing, the file did not contain any, for example an encrypted export.</li></ul></div></details>
+<h2 id="g3">Features</h2>
+<details id="autofill"><summary>How do I turn on one-time-code AutoFill? (Pro)</summary><div class="ans"><ol><li>In iOS open <span class="path">Settings &rsaquo; General &rsaquo; AutoFill &amp; Passwords &rsaquo; Verification Codes</span> and choose <strong>Latchkey</strong>. (In Latchkey, <span class="path">Settings &rsaquo; AutoFill codes</span> has a button that opens it.)</li>
+<li>Make sure each account has its website set; Latchkey knows many already. For others, open the account and add its AutoFill website, like <code>github.com</code>.</li>
+<li>Sign in as usual. When the code field appears, tap the Latchkey suggestion above the keyboard.</li></ol>
+<p>AutoFill needs Latchkey Pro. If a code does not show up, check the website setting on the account, and that Latchkey is selected under Verification Codes.</p></div></details>
+<details id="widgets"><summary>How do I add a widget? (Pro)</summary><div class="ans"><ol><li>On the Codes screen, tap <span class="path">&#8943;</span> on an account and choose <strong>Show in Widgets</strong>.</li>
+<li>Touch and hold the Home Screen, tap <span class="path">Edit &rsaquo; Add Widget</span>, find Latchkey and add it.</li></ol>
+<p>Widgets hide codes while your iPhone is locked.</p></div></details>
+<details id="lock"><summary>How do I lock Latchkey with Face ID? Can I hide the codes?</summary><div class="ans"><p>Open <span class="path">Settings</span> in Latchkey and turn on <strong>Lock with Face ID</strong> (it says Touch ID or Passcode if that is what your device uses). <strong>Require</strong> sets how long Latchkey may stay unlocked: immediately, or after 1, 5 or 15 minutes. If Face ID fails, your iPhone passcode unlocks it.</p>
+<p>Turn on <strong>Hide codes until tapped</strong> to blur every code until you tap it. <strong>Show the next code early</strong> displays the upcoming code when the current one is about to expire. Tapping a code copies it, and it clears from the clipboard after 90 seconds.</p></div></details>
+<details id="folders"><summary>Can I organize accounts into folders? (Pro)</summary><div class="ans"><p>Yes. Open an account's <span class="path">&#8943;</span> menu, choose <strong>Folder</strong> and pick one or create a new folder. Use folders to keep work, family and gaming accounts apart.</p></div></details>
+<details id="sync"><summary>What does iCloud Keychain sync do? (Pro)</summary><div class="ans"><p>With <span class="path">Settings &rsaquo; iCloud Keychain sync</span> on, your accounts are stored in your own iCloud Keychain, so they appear on your other iPhones and iPads signed in to the same Apple Account, and on a new phone. Apple's end-to-end protection for iCloud Keychain applies. This is the only way your secrets ever leave the device, and the developer never has access to them. iCloud Keychain must be switched on in iOS (<span class="path">Settings &rsaquo; your name &rsaquo; iCloud &rsaquo; Passwords &amp; Keychain</span>).</p></div></details>
+<h2 id="g4">Subscriptions</h2>
+<details id="subscription"><summary>How do I cancel, restore or manage Latchkey Pro?</summary><div class="ans"><p><strong>Cancel:</strong> on your iPhone open <span class="path">Settings &rsaquo; your name &rsaquo; Subscriptions &rsaquo; Latchkey Pro</span> and tap Cancel (or Cancel Free Trial). Do it at least a day before the renewal date. You keep Pro until the end of the period you paid for. Deleting the app does not cancel a subscription.</p>
+<p><strong>Restore on a new phone:</strong> sign in with the same Apple Account, then in Latchkey open <span class="path">Settings &rsaquo; Restore Purchases</span>. This restores the monthly, yearly or lifetime Pro purchase.</p>
+<p><strong>Refunds:</strong> Apple handles billing and refunds. Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<p>Prices: $1.99 a month or $12.99 a year (1-week free trial), or $29.99 lifetime, in US dollars; other countries see local prices. Subscriptions renew automatically unless cancelled and are governed by <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's standard Terms of Use</a>.</p></div></details>
+<details id="cancel-codes"><summary>What happens to my codes if I cancel Pro?</summary><div class="ans"><p>Your accounts and codes stay on the device and keep working. Pro features (sync, AutoFill, widgets, folders) turn off. Nothing is deleted.</p></div></details>
+<h2 id="g5">Other questions</h2>
+<details id="watch"><summary>Is there an Apple Watch app, push approval, or passkey support?</summary><div class="ans"><p>No. Latchkey is a one-time-code authenticator. It does not have an Apple Watch app, push-notification approvals, a password manager or passkeys.</p></div></details>
+<details id="contact"><summary>How do I report a problem or ask something else?</summary><div class="ans"><p>Open an issue at <a href="https://github.com/Levan2002/latchkey/issues">https://github.com/Levan2002/latchkey/issues</a> (a free GitHub account is required), or use the support link on Latchkey's <a href="https://apps.apple.com/app/id6819347011">App Store page</a>. Please do not post secrets, setup keys or codes anywhere public.</p></div></details>
+<div class="note"><p><strong>Still stuck?</strong> Open an issue at <a href="https://github.com/Levan2002/latchkey/issues">GitHub</a> or write to us through the <a href="https://apps.apple.com/app/id6819347011">App Store</a> support link.</p></div><script>(function(){function o(){var h=location.hash.slice(1);if(!h)return;var e=document.getElementById(h);if(e&&e.tagName==='DETAILS'){e.open=true;e.scrollIntoView()}}o();addEventListener('hashchange',o)})()</script>
+</div></main>
+<footer><div class="wrap">
+<nav aria-label="Footer"><a href="help.html">Help &amp; FAQ</a><a href="guides/">Guides</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="https://github.com/Levan2002/latchkey/issues">Report a problem</a><a href="https://apps.apple.com/app/id6819347011">App Store</a></nav>
+<p>Latchkey: Authenticator App, by Levani Topchishvili (individual developer).</p>
+<p>&copy; 2026 Levani Topchishvili. Apple, iPhone, iPad, Face ID and App Store are trademarks of Apple Inc.</p>
+</div></footer>
+</body>
+</html>
